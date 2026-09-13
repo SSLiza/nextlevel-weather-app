@@ -1,4 +1,5 @@
 import { useState } from "react";
+import LocationModal from "../components/LocationModal";
 
 const Home = () => {
     const[click, setClick] = useState("");
@@ -13,6 +14,9 @@ const Home = () => {
                 onClick={() => setClick("clicked")}
                 className='bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded-3xl'>Check Weather</button>
             </div>
+            {
+                click && <LocationModal onClose={() => setClick("")} />
+            }
         </div>
     );
 };
